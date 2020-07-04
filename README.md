@@ -1,1 +1,3 @@
 # pykds
+
+For Python classes for kids ...
