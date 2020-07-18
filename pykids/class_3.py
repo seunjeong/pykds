@@ -1,47 +1,66 @@
-file_path = 'https://raw.githubusercontent.com/seunjeong/pykds/master/data/john_3.txt'
+print ()
+print ('#'*50)
 
-bag_of_words = {}
-with open(file_path) as fp:
-    cnt = 0
-    for line in fp:
-        print("line {} contents {}".format(cnt, line))
-        #record_word_cnt(line.strip().split(' '), bag_of_words)
-        cnt += 1
+################################################################################
+# dictionary
+################################################################################
+
+age = {'yeojin': 15, 'david': 14, 'chase': 13, 'daniel': 12, 'jooan': 12, 'hamin':11}
 
 
-import sys
-import os
+my_name = 'hamin'
+#print ('My age is: {}'.format(age['chase']))
+print ('My name is {}, \
+and my age is: {}'.format(my_name, age[my_name]))
 
-def main():
-   filepath = sys.argv[1]
+# Amazon
+user_ids = {'seunjeong': 2002, 'davidj': 'no', 'yamazon':2019}
 
-   if not os.path.isfile(filepath):
-       print("File path {} does not exist. Exiting...".format(filepath))
-       sys.exit()
-  
-   bag_of_words = {}
-   with open(filepath) as fp:
-       cnt = 0
-       for line in fp:
-           print("line {} contents {}".format(cnt, line))
-           record_word_cnt(line.strip().split(' '), bag_of_words)
-           cnt += 1
-   sorted_words = order_bag_of_words(bag_of_words, desc=True)
-   print("Most frequent 10 words {}".format(sorted_words[:10]))
-  
-def order_bag_of_words(bag_of_words, desc=False):
-   words = [(word, cnt) for word, cnt in bag_of_words.items()]
-   return sorted(words, key=lambda x: x[1], reverse=desc)
+user = 'yamazon'
 
-def record_word_cnt(words, bag_of_words):
-    for word in words:
-        if word != '':
-            if word.lower() in bag_of_words:
-                bag_of_words[word.lower()] += 1
-            else:
-                bag_of_words[word.lower()] = 1
+#print ("member since {} for {}".format (user_ids[user], user))
 
-if __name__ == '__main__':
-    main()
 
-#https://stackabuse.com/read-a-file-line-by-line-in-python/
+# Now, print them all.
+"""
+for x in age.items():
+  print (x)
+"""
+# In a clearer way
+"""
+for x in age.items():
+  print ('Name: {}; Age {}'.format (x[0], x[1]))
+"""
+################################################################################
+# Function
+################################################################################
+
+def add (x, y): # x and y are called parameters.
+  total = x + y
+  return (total)
+
+print (add (3,5))
+print (add (1215461123,112345)) # reuse.
+
+def multiply (x, y):
+  return (x * y)
+
+print (multiply (3, 5))
+print (multiply (1215461123, 112345)) # reuse.
+
+def average (x, y):
+  return ((x + y)/2)
+
+print (average (2, 8))
+
+################################################################################
+# Reading data from files
+################################################################################
+file_path = 'john_3.txt'
+
+with open(file_path) as f:
+  #ct = 0
+  for ln in f:
+    #print("#{}: {}".format(ct, a))
+    print("{}".format(ln))
+    #ct = ct + 1
