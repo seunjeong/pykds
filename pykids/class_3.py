@@ -22,15 +22,14 @@ user = 'yamazon'
 
 
 # Now, print them all.
-"""
+
 for x in age.items():
   print (x)
-"""
+
 # In a clearer way
-"""
 for x in age.items():
   print ('Name: {}; Age {}'.format (x[0], x[1]))
-"""
+
 ################################################################################
 # Function
 ################################################################################
