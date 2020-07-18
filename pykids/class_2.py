@@ -44,7 +44,7 @@ a_list.append ('a')
 print ('Now a_list is {}'.format(a_list))
 
 #===============================================================================
-# Accessing elements of the list
+# Create a longer list and print its item.
 #===============================================================================
 # Adding more 
 long_list = []
